@@ -30,13 +30,13 @@ pub(crate) enum Padding {
 }
 
 /// The type of the `hour` field of `Time`.
-type Hours = RangedU8<0, { Hour::per(Day) - 1 }>;
+pub(crate) type Hours = RangedU8<0, { Hour::per(Day) - 1 }>;
 /// The type of the `minute` field of `Time`.
-type Minutes = RangedU8<0, { Minute::per(Hour) - 1 }>;
+pub(crate) type Minutes = RangedU8<0, { Minute::per(Hour) - 1 }>;
 /// The type of the `second` field of `Time`.
-type Seconds = RangedU8<0, { Second::per(Minute) - 1 }>;
+pub(crate) type Seconds = RangedU8<0, { Second::per(Minute) - 1 }>;
 /// The type of the `nanosecond` field of `Time`.
-type Nanoseconds = RangedU32<0, { Nanosecond::per(Second) - 1 }>;
+pub(crate) type Nanoseconds = RangedU32<0, { Nanosecond::per(Second) - 1 }>;
 
 /// The clock time within a given date. Nanosecond precision.
 ///

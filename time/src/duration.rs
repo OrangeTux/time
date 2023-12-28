@@ -27,7 +27,7 @@ pub(crate) enum Padding {
 }
 
 /// The type of the `nanosecond` field of `Duration`.
-type Nanoseconds =
+pub(crate) type Nanoseconds =
     RangedI32<{ -(Nanosecond::per(Second) as i32 - 1) }, { Nanosecond::per(Second) as i32 - 1 }>;
 
 /// A span of time with nanosecond precision.

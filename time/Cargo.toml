@@ -30,7 +30,9 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "__time_03_docs", "--generate-link-to-definition"]
 
 [features]
-default = ["std"]
+# TODO: Remove "arbitrary" from list.
+default = ["std", "arbitrary"]
+arbitrary = [ "dep:arbitrary" ]
 alloc = ["serde?/alloc"]
 formatting = ["dep:itoa", "std", "time-macros?/formatting"]
 large-dates = ["time-macros?/large-dates"]
@@ -49,6 +51,7 @@ wasm-bindgen = ["dep:js-sys"]
 # If adding an optional dependency, be sure to use the `dep:` prefix above to avoid an implicit
 # feature gate.
 [dependencies]
+arbitrary = { workspace = true, optional = true }
 deranged = { workspace = true }
 itoa = { workspace = true, optional = true }
 num-conv = { workspace = true }

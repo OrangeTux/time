@@ -85,6 +85,8 @@
 #[cfg(feature = "alloc")]
 extern crate alloc;
 
+//#[cfg(feature = "arbitrary")]
+mod arbitrary;
 mod date;
 mod date_time;
 mod duration;
